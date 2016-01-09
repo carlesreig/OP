@@ -29,7 +29,7 @@ _menu() {
 	echo -e "${MENU}**${NUMBER} XX)${MENU} comprovar si instància BBDD està OPEN ${NORMAL}"
 	echo -e "${MENU}**${NUMBER} s)${MENU} Exit ${NORMAL}"
 	echo -e "${MENU}*********************************************${NORMAL}"
-	echo -e "${ENTER_LINE}Selecciona la opcio i presiona enter o ${RED_TEXT}presiona enter per sortir. ${NORMAL}"
+	echo -e "${ENTER_LINE}Selecciona la opcio i presiona enter o ${RED_TEXT}presiona S per sortir. ${NORMAL}"
 }
  
 function option_picked() {

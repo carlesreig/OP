@@ -8,7 +8,9 @@ Creat originalment per Ricard Rabet Brugue.
 ## Instal·lació
 
 - Copia tots els scripts *.sh en una carpeta on tinguis permisos.
-- Canvia els permisos dels fitxers per a que només tu puguis modificar i executar els scripts: ``.
+- Canvia els permisos dels fitxers per a que només tu puguis modificar i executar els scripts:
+`chmod 700 *.sh`
+`chmod 600 pwd.txt`
 
 ## Ús
 

@@ -1,5 +1,5 @@
 #!/bin/sh
-# 2016/01/09 @ 10:29h
+# 2016/01/09 @ 11:26h
 _menu() {
 	# declarem els colors
 	NORMAL=`echo "\033[m"`

@@ -1,5 +1,6 @@
 #!/bin/sh
 # 2016/01/09 @ 11:26h
+# Scripts creat per Ricard Rabert Brugue i modificat per Carles Reig @ 2016
 _menu() {
 	# declarem els colors
 	NORMAL=`echo "\033[m"`
@@ -10,7 +11,7 @@ _menu() {
 	ENTER_LINE=`echo "\033[33m"`
 	# mostrem el menu principal
 	echo -e "${MENU}*********************************************${NORMAL}"
-	echo -e "${MENU}****************UNIX*************************${NORMAL}"
+	echo -e "${MENU}****************1X-UNIX*************************${NORMAL}"
 	echo -e "${MENU}**${NUMBER} 10)${MENU} not running perfalarm ${NORMAL}"
 	echo -e "${MENU}**${NUMBER} 11)${MENU} not running standard ${NORMAL}"
 	echo -e "${MENU}**${NUMBER} 1)${MENU} Too many instances X ${NORMAL}"
@@ -18,13 +19,13 @@ _menu() {
 	echo -e "${MENU}**${NUMBER} 5)${MENU} NTP offset ${NORMAL}"
 	echo -e "${MENU}**${NUMBER} 6)${MENU} not running ntpd verificacio ${NORMAL}"
 	echo -e "${MENU}**${NUMBER} 7)${MENU} not running ntpd arranc ${NORMAL}"
-	echo -e "${MENU}*****************FS**************************${NORMAL}"
+	echo -e "${MENU}*****************2X-FS**************************${NORMAL}"
 	echo -e "${MENU}**${NUMBER} 2)${MENU} FS i arxius major ocupacio ${NORMAL}"
-	echo -e "${MENU}**************RENDIMENT**********************${NORMAL}"
+	echo -e "${MENU}**************3X - RENDIMENT**********************${NORMAL}"
 	echo -e "${MENU}**${NUMBER} 8)${MENU} CPU & Process ${NORMAL}"
 	echo -e "${MENU}**${NUMBER} 9)${MENU} Uptime ${NORMAL}"
 	echo -e "${MENU}**${NUMBER} 4)${MENU} Mem Swap & FreeE ${NORMAL}"
-	echo -e "${MENU}****************BBDD*************************${NORMAL}"
+	echo -e "${MENU}****************4X-BBDD*************************${NORMAL}"
 	echo -e "${MENU}**${NUMBER} XX)${MENU} comprovar si BBDD està aixecada ${NORMAL}"
 	echo -e "${MENU}**${NUMBER} XX)${MENU} comprovar si instància BBDD està OPEN ${NORMAL}"
 	echo -e "${MENU}*********************************************${NORMAL}"
@@ -34,7 +35,7 @@ _menu() {
 }
  
 function option_picked() {
-    COLOR='\033[01;31m' # Negretas en vermell
+    COLOR='\033[01;31m' # Negretes en vermell
     RESET='\033[00;00m' # normal blanca
     MESSAGE=${@:-"${RESET}Error: No message passed"}
     echo -e "${COLOR}${MESSAGE}${RESET}"
@@ -44,6 +45,14 @@ function option_picked() {
 # echo "A quin servidor vols accedir?"
 # read HOST
 # PASS=$(cat pwd.txt)
+
+# PENDENT funció expect password usuari unix
+# expect \"yes/no\" { 
+# send -- \"yes\r\"
+# expect \"*?assword\" { send -- \"$PASS\r\" }
+# } \"*?assword\" { send -- \"$PASS\r\" }
+# send -- \"\r\"
+# expect eof
 
 # opcio per defecte
 opc="0"
@@ -113,13 +122,6 @@ until [ "$opc" == "s" ]; do
        option_picked "Opcio $opc seleccionada";
          echo "tambe serveix per a les syslogd, xntp, coda, xinetd";
          ./not_running_standard.sh;
-    _menu
-    ;;
-
-    111)
-       option_picked "Opcio $opc seleccionada";
-	clear
-        echo "Scripts creat per Ricard Rabert Brugue ;D";
     _menu
     ;;
 	

@@ -1,29 +1,35 @@
 #!/bin/sh
 # 2016/01/09 @ 10:29h
 _menu() {
-    NORMAL=`echo "\033[m"`
-    MENU=`echo "\033[36m"` #Blau cel
-    NUMBER=`echo "\033[33m"` #groc
-    FGRED=`echo "\033[41m"`
-    RED_TEXT=`echo "\033[31m"`
-    ENTER_LINE=`echo "\033[33m"`
-    echo -e "${MENU}*********************************************${NORMAL}"
-    echo -e "${MENU}*********************************************${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 1)${MENU} Too many instances X ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 2)${MENU} FS i archius major ocupacio ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 3)${MENU} ONE least ITO ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 4)${MENU} SWAPINFO&FREE ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 5)${MENU} NTP offset ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 6)${MENU} not running ntpd verificacio ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 7)${MENU} not running ntpd arranc ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 8)${MENU} CPU & PROCESS ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 9)${MENU} UPTIME ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 10)${MENU} not running perfalarm ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 11)${MENU} not running standard ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} s)${MENU} Exit ${NORMAL}"
-    echo -e "${MENU}*********************************************${NORMAL}"
-    echo -e "${MENU}*********************************************${NORMAL}"
-    echo -e "${ENTER_LINE}Selecciona la opcio i presiona enter o ${RED_TEXT}presiona enter per sortir. ${NORMAL}"
+	# declarem els colors
+	NORMAL=`echo "\033[m"`
+	MENU=`echo "\033[36m"` # Blau cel
+	NUMBER=`echo "\033[33m"` # groc
+	FGRED=`echo "\033[41m"`
+	RED_TEXT=`echo "\033[31m"`
+	ENTER_LINE=`echo "\033[33m"`
+	# mostrem el menu principal
+	echo -e "${MENU}*********************************************${NORMAL}"
+	echo -e "${MENU}****************UNIX*************************${NORMAL}"
+	echo -e "${MENU}**${NUMBER} 10)${MENU} not running perfalarm ${NORMAL}"
+	echo -e "${MENU}**${NUMBER} 11)${MENU} not running standard ${NORMAL}"
+	echo -e "${MENU}**${NUMBER} 1)${MENU} Too many instances X ${NORMAL}"
+	echo -e "${MENU}**${NUMBER} 3)${MENU} ONE least ITO ${NORMAL}"
+	echo -e "${MENU}**${NUMBER} 5)${MENU} NTP offset ${NORMAL}"
+	echo -e "${MENU}**${NUMBER} 6)${MENU} not running ntpd verificacio ${NORMAL}"
+	echo -e "${MENU}**${NUMBER} 7)${MENU} not running ntpd arranc ${NORMAL}"
+	echo -e "${MENU}*****************FS**************************${NORMAL}"
+	echo -e "${MENU}**${NUMBER} 2)${MENU} FS i arxius major ocupacio ${NORMAL}"
+	echo -e "${MENU}**************RENDIMENT**********************${NORMAL}"
+	echo -e "${MENU}**${NUMBER} 8)${MENU} CPU & PROCESS ${NORMAL}"
+	echo -e "${MENU}**${NUMBER} 9)${MENU} UPTIME ${NORMAL}"
+	echo -e "${MENU}**${NUMBER} 4)${MENU} SWAPINFO&FREE ${NORMAL}"
+	echo -e "${MENU}****************BBDD*************************${NORMAL}"
+	echo -e "${MENU}**${NUMBER} XX)${MENU} comprovar si BBDD està aixecada ${NORMAL}"
+	echo -e "${MENU}**${NUMBER} XX)${MENU} comprovar si instància BBDD està OPEN ${NORMAL}"
+	echo -e "${MENU}**${NUMBER} s)${MENU} Exit ${NORMAL}"
+	echo -e "${MENU}*********************************************${NORMAL}"
+	echo -e "${ENTER_LINE}Selecciona la opcio i presiona enter o ${RED_TEXT}presiona enter per sortir. ${NORMAL}"
 }
  
 function option_picked() {

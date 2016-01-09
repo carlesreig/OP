@@ -1,5 +1,5 @@
 #!/bin/sh
-# 2016/01/09 @ 11:26h
+# 2016/01/09 @ 16:41h
 # Scripts creat per Ricard Rabert Brugue i modificat per Carles Reig @ 2016
 _menu() {
 	# declarem els colors
@@ -10,8 +10,9 @@ _menu() {
 	RED_TEXT=`echo "\033[31m"`
 	ENTER_LINE=`echo "\033[33m"`
 	# mostrem el menu principal
+	# PENDENT crear un submenú per a cada secció 1x (UNIX), 2x (FS), 3x (BBDD)...
 	echo -e "${MENU}*********************************************${NORMAL}"
-	echo -e "${MENU}****************1X-UNIX*************************${NORMAL}"
+	echo -e "${MENU}****************1x-UNIX*************************${NORMAL}"
 	echo -e "${MENU}**${NUMBER} 10)${MENU} not running perfalarm ${NORMAL}"
 	echo -e "${MENU}**${NUMBER} 11)${MENU} not running standard ${NORMAL}"
 	echo -e "${MENU}**${NUMBER} 1)${MENU} Too many instances X ${NORMAL}"
@@ -19,21 +20,22 @@ _menu() {
 	echo -e "${MENU}**${NUMBER} 5)${MENU} NTP offset ${NORMAL}"
 	echo -e "${MENU}**${NUMBER} 6)${MENU} not running ntpd verificacio ${NORMAL}"
 	echo -e "${MENU}**${NUMBER} 7)${MENU} not running ntpd arranc ${NORMAL}"
-	echo -e "${MENU}*****************2X-FS**************************${NORMAL}"
+	echo -e "${MENU}*****************2x-FS**************************${NORMAL}"
 	echo -e "${MENU}**${NUMBER} 2)${MENU} FS i arxius major ocupacio ${NORMAL}"
-	echo -e "${MENU}**************3X - RENDIMENT**********************${NORMAL}"
+	echo -e "${MENU}****************3x-BBDD*************************${NORMAL}"
+	echo -e "${MENU}**${NUMBER} XX)${MENU} comprovar si BBDD està aixecada ${NORMAL}"
+	echo -e "${MENU}**${NUMBER} XX)${MENU} comprovar si instància BBDD està OPEN ${NORMAL}"
+	echo -e "${MENU}**************4x - RENDIMENT**********************${NORMAL}"
 	echo -e "${MENU}**${NUMBER} 8)${MENU} CPU & Process ${NORMAL}"
 	echo -e "${MENU}**${NUMBER} 9)${MENU} Uptime ${NORMAL}"
 	echo -e "${MENU}**${NUMBER} 4)${MENU} Mem Swap & FreeE ${NORMAL}"
-	echo -e "${MENU}****************4X-BBDD*************************${NORMAL}"
-	echo -e "${MENU}**${NUMBER} XX)${MENU} comprovar si BBDD està aixecada ${NORMAL}"
-	echo -e "${MENU}**${NUMBER} XX)${MENU} comprovar si instància BBDD està OPEN ${NORMAL}"
 	echo -e "${MENU}*********************************************${NORMAL}"
 	echo -e "${MENU}**${NUMBER} s)${MENU} Exit ${NORMAL}"
 	echo -e "${MENU}*********************************************${NORMAL}"
 	echo -e "${ENTER_LINE}Selecciona la opcio i presiona enter o ${RED_TEXT}presiona S per sortir. ${NORMAL}"
 }
- 
+
+# func que detecta opció escollida en el menu anterior
 function option_picked() {
     COLOR='\033[01;31m' # Negretes en vermell
     RESET='\033[00;00m' # normal blanca
@@ -41,23 +43,29 @@ function option_picked() {
     echo -e "${COLOR}${MESSAGE}${RESET}"
 }
 
-# PENDENT funció per demanar nom del servidor i contrasenya usuari, per no repetir el mateix procés en cada script de les opcions.
-# echo "A quin servidor vols accedir?"
-# read HOST
-# PASS=$(cat pwd.txt)
+# PENDENT funció per demanar nom del servidor i variable on desar la contrasenya
+# PENDENT COMPROVAR si funciona en script up.sh
+function servidor() {
+	echo "A quin servidor vols accedir?"
+	read HOST
+	# declarem variable on desar la contrasenya d'usuari per accedir al servidor
+	PASS=$(cat pwd.txt)
+}
 
 # PENDENT funció expect password usuari unix
-# expect \"yes/no\" { 
-# send -- \"yes\r\"
-# expect \"*?assword\" { send -- \"$PASS\r\" }
-# } \"*?assword\" { send -- \"$PASS\r\" }
-# send -- \"\r\"
-# expect eof
+# PENDENT COMPROVAR si funciona en script up.sh
+function pswd_expect(){
+	PSWD_EXPECT=$("expect \"yes/no\" { send -- \"yes\r\"
+		expect \"*?assword\" { send -- \"$PASS\r\" }
+		} \"*?assword\" { send -- \"$PASS\r\" }
+	send -- \"\r\"
+	expect eof")	
+}
 
-# opcio per defecte
+# opcio per defecte -> cap
 opc="0"
 
-# PENDENT modificar numeració opcions, segons tipus, per ex; unix 01, 02... bbdd 10, 11...
+# PENDENT modificar numeració opcions, segons tipus, per ex; unix 10, 11... bbdd 30, 31...
 # bucle mentres la opcio indicada sigui diferent de s (sortir)
 until [ "$opc" == "s" ]; do
     case $opc in

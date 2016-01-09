@@ -21,12 +21,13 @@ _menu() {
 	echo -e "${MENU}*****************FS**************************${NORMAL}"
 	echo -e "${MENU}**${NUMBER} 2)${MENU} FS i arxius major ocupacio ${NORMAL}"
 	echo -e "${MENU}**************RENDIMENT**********************${NORMAL}"
-	echo -e "${MENU}**${NUMBER} 8)${MENU} CPU & PROCESS ${NORMAL}"
-	echo -e "${MENU}**${NUMBER} 9)${MENU} UPTIME ${NORMAL}"
-	echo -e "${MENU}**${NUMBER} 4)${MENU} SWAPINFO&FREE ${NORMAL}"
+	echo -e "${MENU}**${NUMBER} 8)${MENU} CPU & Process ${NORMAL}"
+	echo -e "${MENU}**${NUMBER} 9)${MENU} Uptime ${NORMAL}"
+	echo -e "${MENU}**${NUMBER} 4)${MENU} Mem Swap & FreeE ${NORMAL}"
 	echo -e "${MENU}****************BBDD*************************${NORMAL}"
 	echo -e "${MENU}**${NUMBER} XX)${MENU} comprovar si BBDD està aixecada ${NORMAL}"
 	echo -e "${MENU}**${NUMBER} XX)${MENU} comprovar si instància BBDD està OPEN ${NORMAL}"
+	echo -e "${MENU}*********************************************${NORMAL}"
 	echo -e "${MENU}**${NUMBER} s)${MENU} Exit ${NORMAL}"
 	echo -e "${MENU}*********************************************${NORMAL}"
 	echo -e "${ENTER_LINE}Selecciona la opcio i presiona enter o ${RED_TEXT}presiona S per sortir. ${NORMAL}"
@@ -38,10 +39,16 @@ function option_picked() {
     MESSAGE=${@:-"${RESET}Error: No message passed"}
     echo -e "${COLOR}${MESSAGE}${RESET}"
 }
- 
+
+# PENDENT funció per demanar nom del servidor i contrasenya usuari, per no repetir el mateix procés en cada script de les opcions.
+# echo "A quin servidor vols accedir?"
+# read HOST
+# PASS=$(cat pwd.txt)
+
 # opcio per defecte
 opc="0"
- 
+
+# PENDENT modificar numeració opcions, segons tipus, per ex; unix 01, 02... bbdd 10, 11...
 # bucle mentres la opcio indicada sigui diferent de s (sortir)
 until [ "$opc" == "s" ]; do
     case $opc in
@@ -121,7 +128,7 @@ until [ "$opc" == "s" ]; do
 	;;
 	
     *)
-# Si no es ninguna de les anteriors.
+# Si no es cap de les anteriors.
     clear
     _menu
     ;;

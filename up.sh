@@ -1,7 +1,7 @@
 #!/bin/bash
-echo "A quin servidor vols accedir?"
-read HOST
-PASS=$(cat pwd.txt)
+# 2016/01/09
+# cridem a la func per a connectar al servidor
+servidor()
 
 clear
 	echo ""
@@ -10,12 +10,6 @@ clear
 	echo "========================================================================="
 	echo ""
 	VAR=$(expect -c " 
-	spawn ssh $HOST echo \; uptime && uname -a && date;
-	expect \"yes/no\" { 
-	    send -- \"yes\r\"
-	    expect \"*?assword\" { send -- \"$PASS\r\" }
-	    } \"*?assword\" { send -- \"$PASS\r\" }
-	send -- \"\r\"
-	expect eof
-        ")
-	echo "$VAR"|tail -4
+		spawn ssh $HOST echo \; uptime && uname -a && date;
+	" pswd_expect() ")"
+	echo "$VAR"

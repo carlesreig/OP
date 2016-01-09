@@ -1,9 +1,9 @@
 # OP
 Versió 2016/01/09
 
-Scripts de bash/shell per a monitorització de sistemes linux/unix/hp-ux
+Scripts monitorització i gestió d'alertes de servidors linux/hp-ux.
 
-Creat originalment per Ricard Rabet Brugue.
+Creat originalment per Ricard Rabet Brugue, modificats per Carles Reig.
 
 ## Instal·lació
 

@@ -1,13 +1,9 @@
 #!/bin/bash
 echo "A quin servidor vols accedir?"
 read HOST
-
 PASS=$(cat pwd.txt)
 
 clear
-
-	echo ""
-	echo "========================================================================="
 	echo ""
 	echo "  ntpd not running arranc a $HOST"
 	echo ""

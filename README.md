@@ -7,7 +7,7 @@ Creat originalment per Ricard Rabet Brugue.
 
 ## Instal·lació
 
-- Copia tots els scripts *.sh en una carpeta on tinguis permisos.
+- Copia tots els scripts `*.sh` i el fitxer `pwd.txt` en una carpeta on tinguis permisos mitjançant SFTP (FileZilla).
 - Canvia els permisos dels fitxers per a que només tu puguis modificar i executar els scripts:
 `chmod 700 *.sh;`
 `chmod 600 pwd.txt`

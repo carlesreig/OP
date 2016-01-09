@@ -1,6 +1,8 @@
 #!/bin/bash
 # comprovar File System (FS)
-# 2016/01/09 @ 09:44h
+# 2016/01/09 @ 13:57h
+# PENDENT comprovar els FS de sistemes HP-UX
+# PENDENT mostrar carpetes de més ocupació du -sk * | sort -rn
 echo "A quin servidor vols accedir?"
 read HOST
 echo "escriu la ruta absoluta del FS a revisar"
@@ -8,9 +10,6 @@ read FS
 PASS=$(cat pwd.txt)
 
 clear
-
-	echo ""
-	echo "========================================================================="
 	echo ""
 	echo "  Filesystem de $HOST"
 	echo ""
@@ -28,7 +27,7 @@ clear
 	echo "$VAR"|tail -4
 
         echo ""
-        echo "===================================Archiu de major ocupacio ======================================"
+        echo "===================================Arxiu de major ocupacio ======================================"
         echo ""
 
         VAR1=$(expect -c "
@@ -41,7 +40,6 @@ clear
         expect eof
         ")
         echo "$VAR1"|awk '{print $7"\t"$5"\t"$11}'|sort -rn|head -5|more
-
         
 	echo ""
         echo "=================================================================================================="

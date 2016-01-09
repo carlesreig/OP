@@ -1,4 +1,5 @@
 #!/bin/sh
+# 2016/01/09 @ 09:22h
 _menu() {
     NORMAL=`echo "\033[m"`
     MENU=`echo "\033[36m"` #Blau cel
@@ -114,7 +115,7 @@ until [ "$opc" == "s" ]; do
 	;;
 	
     *)
-# Si no es ninguna de les anteriors.
+# Si no es cap de les anteriors.
     clear
     _menu
     ;;

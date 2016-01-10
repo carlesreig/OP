@@ -1,15 +1,15 @@
 #!/bin/bash
 # 2016/01/09
-# cridem a la func per a connectar al servidor
-servidor()
+# script per a comprovar si un servidor esta ON, uptime amb el temps que porta funcionant
+# cridem a la funcio "func_servidor" per a connectar al servidor
+func_servidor
 
 clear
-	echo ""
 	echo "  Uptime a $HOST"
 	echo ""
 	echo "========================================================================="
 	echo ""
 	VAR=$(expect -c " 
 		spawn ssh $HOST echo \; uptime && uname -a && date;
-	" pswd_expect() ")"
+	" func_pswd_expect ")"
 	echo "$VAR"

@@ -7,12 +7,13 @@ func_servidor
 
 # spawn ssh -o "StrictHostKeyChecking no" "$user\@ip"
 # consulta amb les comandes que volem executar en el servidor $HOST
-CONSULTA=$(spawn ssh -o "StrictHostKeyChecking no" $HOST echo; uptime && uname -a && date;)
+# CONSULTA=$(spawn ssh -o "StrictHostKeyChecking no" $HOST echo; uptime && uname -a && date;)
+CONSULTA=$(spawn ssh -o "StrictHostKeyChecking no" $HOST; uptime && uname -a && date;)
 
 clear
 echo "Uptime a $HOST"
 echo "========================================================================="
-	VAR=$(expect -c " 
+	RESULTAT=$(expect -c " 
 	$CONSULTA
 	expect \"yes/no\" { 
 	    send -- \"yes\r\"
@@ -21,5 +22,4 @@ echo "========================================================================="
 	send -- \"\r\"
 	expect eof
         ")
-	echo "$VAR"
-	#echo $RESULTAT
+	echo $RESULTAT

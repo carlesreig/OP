@@ -1,6 +1,6 @@
 #!/bin/sh
-## 2016/01/09 @ 16:41h
-## Scripts creat per Ricard Rabert Brugue i modificat per Carles Reig @ 2016
+# 2016/01/10
+# Scripts creat per Ricard Rabert Brugue i modificat per Carles Reig @ 2016
 _menu() {
 	# declarem els colors
 	NORMAL=`echo "\033[m"`
@@ -43,6 +43,10 @@ function option_picked() {
     echo -e "${COLOR}${MESSAGE}${RESET}"
 }
 
+# DEBUG - FUNCIO DE PROVA
+function func_debug {
+	echo "prova debug"
+}
 # PENDENT funció per demanar nom del servidor i variable on desar la contrasenya
 # PENDENT COMPROVAR si funciona en script up.sh
 function func_servidor {

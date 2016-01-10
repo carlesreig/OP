@@ -9,5 +9,5 @@ clear
 echo "Uptime a $HOST"
 echo "========================================================================="
 # consulta amb les comandes que volem executar en el servidor $HOST
-$CONSULTA=spawn ssh $HOST echo \; uptime && uname -a && date;
+$CONSULTA="spawn ssh $HOST echo \; uptime && uname -a && date;"
 func_pswd_expect($CONSULTA)

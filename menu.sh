@@ -47,6 +47,9 @@ function option_picked() {
 function func_debug {
 	echo "prova debug"
 }
+# exportar funcio com a shell, ara ja es pot utilitzar en altres scripts
+export -f func_debug
+
 # PENDENT funció per demanar nom del servidor i variable on desar la contrasenya
 # PENDENT COMPROVAR si funciona en script up.sh
 function func_servidor {

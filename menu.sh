@@ -45,8 +45,7 @@ function option_picked() {
 	echo -e "${COLOR}${MESSAGE}${RESET}"
 }
 
-# PENDENT funció per demanar nom del servidor i variable on desar la contrasenya
-# PENDENT COMPROVAR si funciona en script up.sh
+# funció per demanar nom del servidor i variable on desar la contrasenya
 function func_servidor {
 	echo "A quin servidor vols accedir?"
 	read HOST
@@ -59,12 +58,18 @@ export -f func_servidor
 # PENDENT funció expect password usuari unix
 # PENDENT COMPROVAR si funciona en script up.sh
 function func_pswd_expect {
-	PSWD_EXPECT=$("expect \"yes/no\" { send -- \"yes\r\"
-		expect \"*?assword\" { send -- \"$PASS\r\" }
+	VAR=$(expect -c " 
+		$CONSULTA
+		expect \"yes/no\" { 
+			send -- \"yes\r\"
+			expect \"*?assword\" { send -- \"$PASS\r\" }
 		} \"*?assword\" { send -- \"$PASS\r\" }
-	send -- \"\r\"
-	expect eof")	
+		send -- \"\r\"
+		expect eof
+	")
+	echo "$VAR"
 }
+export -f func_pswd_expect
 
 # opcio per defecte -> cap
 opc="0"

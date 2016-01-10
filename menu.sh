@@ -1,6 +1,6 @@
 #!/bin/sh
-# 2016/01/09 @ 16:41h
-# Scripts creat per Ricard Rabert Brugue i modificat per Carles Reig @ 2016
+## 2016/01/09 @ 16:41h
+## Scripts creat per Ricard Rabert Brugue i modificat per Carles Reig @ 2016
 _menu() {
 	# declarem els colors
 	NORMAL=`echo "\033[m"`
@@ -45,7 +45,7 @@ function option_picked() {
 
 # PENDENT funció per demanar nom del servidor i variable on desar la contrasenya
 # PENDENT COMPROVAR si funciona en script up.sh
-function servidor {
+function func_servidor {
 	echo "A quin servidor vols accedir?"
 	read HOST
 	# declarem variable on desar la contrasenya d'usuari per accedir al servidor
@@ -54,7 +54,7 @@ function servidor {
 
 # PENDENT funció expect password usuari unix
 # PENDENT COMPROVAR si funciona en script up.sh
-function pswd_expect {
+function func_pswd_expect {
 	PSWD_EXPECT=$("expect \"yes/no\" { send -- \"yes\r\"
 		expect \"*?assword\" { send -- \"$PASS\r\" }
 		} \"*?assword\" { send -- \"$PASS\r\" }

@@ -6,12 +6,8 @@
 func_servidor
 
 clear
-	echo "  Uptime a $HOST"
-	echo ""
-	echo "========================================================================="
-	echo ""
-	# després de expect posem les comandes que volem executar en el servidor
-	VAR=$(expect -c " 
-		spawn ssh $HOST echo \; uptime && uname -a && date;
-	" func_pswd_expect ")"
-	echo "$VAR"
+echo "Uptime a $HOST"
+echo "========================================================================="
+# consulta amb les comandes que volem executar en el servidor $HOST
+$CONSULTA=spawn ssh $HOST echo \; uptime && uname -a && date;
+func_pswd_expect($CONSULTA)

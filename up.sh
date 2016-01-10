@@ -1,9 +1,9 @@
 #!/bin/bash
 # 2016/01/10
 # script per a comprovar si un servidor esta ON, uptime amb el temps que porta funcionant
-func_debug
+
 # cridem a la funcio "func_servidor" per a connectar al servidor
-#func_servidor
+func_servidor
 
 clear
 	echo "  Uptime a $HOST"

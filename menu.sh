@@ -37,18 +37,13 @@ _menu() {
 
 # func que detecta opció escollida en el menu anterior
 function option_picked() {
-    COLOR='\033[01;31m' # Negretes en vermell
-    RESET='\033[00;00m' # normal blanca
-    MESSAGE=${@:-"${RESET}Error: No message passed"}
-    echo -e "${COLOR}${MESSAGE}${RESET}"
+	# Negretes en vermell
+	COLOR='\033[01;31m'
+	# normal blanca
+	RESET='\033[00;00m' 
+	MESSAGE=${@:-"${RESET}Error: No message passed"}
+	echo -e "${COLOR}${MESSAGE}${RESET}"
 }
-
-# DEBUG - FUNCIO DE PROVA
-function func_debug {
-	echo "prova debug"
-}
-# exportar funcio com a shell, ara ja es pot utilitzar en altres scripts
-export -f func_debug
 
 # PENDENT funció per demanar nom del servidor i variable on desar la contrasenya
 # PENDENT COMPROVAR si funciona en script up.sh
@@ -58,6 +53,8 @@ function func_servidor {
 	# declarem variable on desar la contrasenya d'usuari per accedir al servidor
 	PASS=$(cat pwd.txt)
 }
+# exportar funcio com a shell (i no només com a variable), ara ja es pot utilitzar en altres scripts cridant la func_*
+export -f func_servidor
 
 # PENDENT funció expect password usuari unix
 # PENDENT COMPROVAR si funciona en script up.sh

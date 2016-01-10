@@ -1,18 +1,15 @@
 #!/bin/bash
-# 2016/01/09 @ 11:37h
-echo "A quin servidor vols accedir?"
-read HOST
-PASS=$(cat pwd.txt)
-
+# 2016/01/10
+# script per a comprovacions amb el servidor NTP
+# cridem a la funcio "func_servidor" per a connectar al servidor
+func_servidor
+$COMANDA="echo \; tail /var/opt/OV/log/OpC/ntp_mon.log && /usr/sbin/ntpq -p"
 clear
-
-	echo ""
 	echo "  NTP offset a $HOST"
-	echo ""
 	echo "========================================================================="
 	echo ""
 	VAR=$(expect -c " 
-	spawn ssh $HOST echo \; tail /var/opt/OV/log/OpC/ntp_mon.log && /usr/sbin/ntpq -p
+	spawn ssh $HOST $COMANDA
 	expect \"yes/no\" { 
 	    send -- \"yes\r\"
 	    expect \"*?assword\" { send -- \"$PASS\r\" }
@@ -21,5 +18,3 @@ clear
 	expect eof
         ")
 	echo "$VAR"
-	#echo "$VAR"|tail -4
-#spawn ssh $HOST echo \; /usr/sbin/ntpq -p

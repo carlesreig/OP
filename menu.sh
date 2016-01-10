@@ -58,17 +58,17 @@ export -f func_servidor
 # PENDENT funció expect password usuari unix
 # PENDENT COMPROVAR si funciona en script up.sh
 function func_pswd_expect {
-	expect {
-		$CONSULTA
-		expect "yes/no" { 
-			send -- "yes\r"
-			expect "*?assword" { send -- "$PASS\r" }
-		} "*?assword" { send -- "$PASS\r" }
-		send -- "\r"
-		expect eof	
-	}
-	# retornar un resultat
-	echo "$VAR"
+expect {
+	$CONSULTA
+	expect "yes/no" { 
+	send -- "yes\r"
+	expect "*?assword" { send -- "$PASS\r" }
+	} "*?assword" { send -- "$PASS\r" }
+	send -- "\r"
+	eof
+}
+# retornar un resultat
+echo "$VAR"
 }
 export -f func_pswd_expect
 

@@ -174,7 +174,7 @@ until [ "$opc" == "s" ]; do
         exit
         ;;
     *)
-# Si no es ninguna de les anteriors.
+# Si no es cap de les anteriors.
     clear
     _menu
     ;;

@@ -13,6 +13,8 @@ clear
     COLOR='\033[01;31m' # Negretas en vermell
     RESET='\033[00;00m' # normal blanca
 
+#demana el pwd de unix al usuari en cada execucio del script menu
+
 echo -e "${COLOR}Introdueix el PWD de usuari UNIX"
 read -s PASS
 export PASS
@@ -60,6 +62,7 @@ function option_picked() {
 
 opc="0"
 
+#pregunta per el host al que accedirem, ubicat a cada script
 function func_servidor {
         echo "A quin servidor vols accedir?"
         read HOST
@@ -67,6 +70,7 @@ function func_servidor {
 
 export -f func_servidor
 
+#pregunta per la instancia a verificar, per exemple en not running standard
 function func_instancia {
         echo "Quina instancia vols verificar?"
         read INSTANCIA
@@ -74,6 +78,7 @@ function func_instancia {
 
 export -f func_instancia
 
+#pregunta per el filesystem a verificar
 function func_FS {
         echo "Escriu el FS a revisar"
         read FS

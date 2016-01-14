@@ -141,7 +141,7 @@ until [ "$opc" == "s" ]; do
 
     22)
       option_picked "Opcio $opc seleccionada";
-        ./up.sh;
+        ./22_up.sh;
     _menu
     ;;
 

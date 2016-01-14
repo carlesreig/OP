@@ -1,13 +1,11 @@
 #!/bin/bash
-# 2016/01/10
 # script per a comprovar si un servidor esta ON, uptime amb el temps que porta funcionant
 
 # cridem a la funcio "func_servidor" per a connectar al servidor
 func_servidor
 
-# spawn ssh -o "StrictHostKeyChecking no" "$user\@ip"
 # consulta amb les comandes que volem executar en el servidor $HOST
-# CONSULTA=$(spawn ssh -o "StrictHostKeyChecking no" $HOST echo; uptime && uname -a && date;)
+# ssh -o "StrictHostKeyChecking no" --> ens afegirà la key ssh del host automàticament sense demanar-ho
 CONSULTA=$(spawn ssh -o "StrictHostKeyChecking no" $HOST; uptime && uname -a && date;)
 
 clear

@@ -1,9 +1,8 @@
 # OP
-Versió 2016/01/09
 
-Scripts monitorització i gestió d'alertes de servidors linux/hp-ux.
+Scripts monitorització i gestió d'alertes per a servidors linux/hp-ux.
 
-Creat originalment per Ricard Rabet Brugue, modificats per Carles Reig.
+Creat originalment per Ricard Rabet Brugue, modificat per Carles Reig.
 
 ## Instal·lació
 
@@ -18,7 +17,8 @@ El fitxer principal és el menu.sh, una vegada cridat aquest s'accedeix als altr
 
 - A la línia de comandes, crida `./menu.sh`.
 
-En el fitxer `pwd.txt` introdueix la contrasenya d'usuari unix. **És una mesura temporal**, serà substituït per algun altre sistema per a evitar deixar dades sensibles en el servidor.
+**opcional** En el fitxer `pwd.txt` introdueix la contrasenya d'usuari unix si vols que no te la demani en iniciar l'script del menú. No és recomanable per termes de seguretat.
+Per habilitar-ho, comenta les línies #18 i #19 del fitxer `menu.sh` i habilita la #21
 
 ## Pendent
 

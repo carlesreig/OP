@@ -153,7 +153,7 @@ until [ "$opc" == "s" ]; do
 
     31)
        option_picked "Opcio $opc seleccionada";
-       ./fs.sh;
+       ./31_fs.sh;
     _menu
     ;;
 

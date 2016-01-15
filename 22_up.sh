@@ -11,13 +11,14 @@ CONSULTA=$(spawn ssh -o "StrictHostKeyChecking no" $HOST; uptime && uname -a && 
 clear
 echo "Uptime a $HOST"
 echo "========================================================================="
-	RESULTAT=$(expect -c " 
-	$CONSULTA
-	expect \"yes/no\" { 
-	    send -- \"yes\r\"
-	    expect \"*?assword\" { send -- \"$PASS\r\" }
-	    } \"*?assword\" { send -- \"$PASS\r\" }
-	send -- \"\r\"
-	expect eof
-        ")
-	echo $RESULTAT
+echo ""
+RESULTAT=$(expect -c " 
+$CONSULTA
+expect \"yes/no\" { 
+    send -- \"yes\r\"
+    expect \"*?assword\" { send -- \"$PASS\r\" }
+    } \"*?assword\" { send -- \"$PASS\r\" }
+send -- \"\r\"
+expect eof
+")
+echo $RESULTAT

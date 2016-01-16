@@ -141,7 +141,7 @@ until [ "$opc" == "s" ]; do
 
     22)
       option_picked "Opcio $opc seleccionada";
-        ./22_up.sh;
+        ./scripts/22_up.sh;
     _menu
     ;;
 
@@ -153,7 +153,7 @@ until [ "$opc" == "s" ]; do
 
     31)
        option_picked "Opcio $opc seleccionada";
-       ./31_fs.sh;
+       ./scripts/31_fs.sh;
     _menu
     ;;
 

@@ -1,5 +1,5 @@
 #!/bin/sh
-# Scripts creat per Ricard Rabert Brugue i modificat per Carles Reig @ 2016
+# Script creat per Ricard Rabert Brugue i modificat per Carles Reig @ 2016
 # Menu principal on declarem les funcions, variables globals i accedim a les diferents shells/opcions
 clear
 
@@ -25,7 +25,6 @@ clear
 _menu() {
     echo -e "${MENU}****************************************************${NORMAL}"
     echo -e "${MENU}******************** Unix **************************${NORMAL}"
-#    echo -e "${MENU}**"
     echo -e "${MENU}**${NUMBER} 11)${MENU} Too many instances X ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 12)${MENU} ONE least ITO ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 13)${MENU} NTP offset ${NORMAL}"
@@ -33,20 +32,13 @@ _menu() {
     echo -e "${MENU}**${NUMBER} 15)${MENU} not running ntpd ${RED_TEXT} arranc (actualment no tenim permis) ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 16)${MENU} not running perfalarm ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 17)${MENU} not running standard ${NORMAL}"
-#   echo -e "${MENU}**"
 #   echo -e "${MENU}**${NUMBER} 999)${MENU} evweb eventviewer ${NORMAL}" en desenvolupament
-#    echo -e "${MENU}****************************************************${NORMAL}"
     echo -e "${MENU}******************* Monitoritzacio *****************${NORMAL}"
-#    echo -e "${MENU}**"
     echo -e "${MENU}**${NUMBER} 21)${MENU} SWAPINFO&FREE ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 22)${MENU} UPTIME ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 23)${MENU} CPU & PROCESS ${NORMAL}"
-#    echo -e "${MENU}**"
-#    echo -e "${MENU}****************************************************${NORMAL}"
     echo -e "${MENU}******************* FileSystems ********************${NORMAL}"
-#    echo -e "${MENU}**"
     echo -e "${MENU}**${NUMBER} 31)${MENU} FS i archius major ocupacio ${NORMAL}"
-#    echo -e "${MENU}**"
     echo -e "${MENU}****************************************************${NORMAL}"
     echo -e "${MENU}**${NUMBER} s)${MENU} Exit ${NORMAL}"
     echo -e "${MENU}****************************************************${NORMAL}"

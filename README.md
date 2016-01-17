@@ -22,7 +22,9 @@ Per habilitar-ho, comenta les línies #18 i #19 del fitxer `menu.sh` i habilita 
 
 ## Pendent
 
-Modificar els scripts per a que demani la contrasenya d'usuari en iniciar el menú, i no cada vegada que volem executar una opció del menú.
+- modificar els noms dels fitxers/scripts seguint format ##_NomScript.sh
+- comprovar enviament comanda amb except dins script
+- afegir més scripts habituals d'incidències
 
 ## Llicència
 

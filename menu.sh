@@ -103,7 +103,7 @@ until [ "$opc" == "s" ]; do
 
     14)
           option_picked "Opcio $opc seleccionada";
-            ./ntpd_not_running_verificacio_no_arranc.sh;
+            ./14_ntpd_not_running.sh;
     _menu
     ;;
 

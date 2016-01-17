@@ -25,6 +25,7 @@ Per habilitar-ho, comenta les línies #18 i #19 del fitxer `menu.sh` i habilita 
 - modificar els noms dels fitxers/scripts seguint format ##_NomScript.sh
 - comprovar enviament comanda amb except dins script
 - afegir més scripts habituals d'incidències
+- crear un menú especial amb macros?
 
 ## Llicència
 

@@ -85,7 +85,7 @@ until [ "$opc" == "s" ]; do
 
     11)
           option_picked "Opcio $opc seleccionada";
-        ./too_many_instances.sh;
+        ./11_too_many_instances.sh;
     _menu
     ;;
 

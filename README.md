@@ -13,7 +13,7 @@ Creat originalment per Ricard Rabet Brugue, modificat per Carles Reig.
 
 ## Ús
 
-El fitxer principal és el menu.sh, una vegada cridat aquest s'accedeix als altres des del menú en consola.
+El fitxer principal és el `menu.sh`, una vegada cridat aquest, s'accedeix als altres des del menú en consola.
 
 - A la línia de comandes, crida `./menu.sh`.
 

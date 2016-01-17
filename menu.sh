@@ -26,10 +26,11 @@ _menu() {
     echo -e "${MENU}****************************************************${NORMAL}"
     echo -e "${MENU}******************** Unix **************************${NORMAL}"
     echo -e "${MENU}**${NUMBER} 11)${MENU} Too many instances X ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 12)${MENU} ONE least ITO ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 12)${MENU} At least one ITO agent process is not running ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 13)${MENU} NTP offset ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 14)${MENU} not running ntpd verificacio ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 15)${MENU} not running ntpd ${RED_TEXT} arranc (actualment no tenim permis) ${NORMAL}"
+# es podria fer un EXPECT i que si retorna que el nptstat és not running que automàticament provi d'iniciar el servei, així no cal tenir dos scripts per una mateixa cosa
+    echo -e "${MENU}**${NUMBER} 15)${MENU} not running ntpd ${RED_TEXT} arranc (actualment no tenim permisos) ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 16)${MENU} not running perfalarm ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 17)${MENU} not running standard ${NORMAL}"
 #   echo -e "${MENU}**${NUMBER} 999)${MENU} evweb eventviewer ${NORMAL}" en desenvolupament

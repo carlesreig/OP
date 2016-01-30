@@ -91,13 +91,13 @@ until [ "$opc" == "s" ]; do
 
     12)
       option_picked "Opcio $opc seleccionada";
-      ./ONE_least_ITO.sh;
+      ./12_ONE_least_ITO.sh;
     _menu
     ;;
 
     13)
           option_picked "Opcio $opc seleccionada";
-        ./NTP_offset.sh;
+        ./13_NTP_offset.sh;
     _menu
     ;;
 
@@ -157,12 +157,6 @@ until [ "$opc" == "s" ]; do
     _menu
     ;;
 
-    111)
-       option_picked "Opcio $opc seleccionada";
-        clear
-        echo "Scripts creat per Ricard Rabert Brugue, colaborador Carles Reig";
-    _menu
-    ;;
     s)
         exit
         ;;

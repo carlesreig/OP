@@ -85,50 +85,50 @@ until [ "$opc" == "s" ]; do
 
     11)
           option_picked "Opcio $opc seleccionada";
-        ./11_too_many_instances.sh;
+        ./scripts/11_too_many_instances.sh;
     _menu
     ;;
 
     12)
       option_picked "Opcio $opc seleccionada";
-      ./12_ONE_least_ITO.sh;
+      ./scripts/12_ONE_least_ITO.sh;
     _menu
     ;;
 
     13)
           option_picked "Opcio $opc seleccionada";
-        ./13_NTP_offset.sh;
+        ./scripts/13_NTP_offset.sh;
     _menu
     ;;
 
     14)
-          option_picked "Opcio $opc seleccionada";
-            ./14_ntpd_not_running.sh;
+	option_picked "Opcio $opc seleccionada";
+	./scripts/14_ntpd_not_running.sh;
     _menu
     ;;
 
     15)
           option_picked "Opcio $opc seleccionada";
-            ./ntpd_not_running_arranc.sh;
+            ./scripts/ntpd_not_running_arranc.sh;
     _menu
     ;;
 
     16)
        option_picked "Opcio $opc seleccionada";
-         ./perfalarm.sh;
+         ./scripts/perfalarm.sh;
     _menu
     ;;
 
     17)
        option_picked "Opcio $opc seleccionada";
          echo "tambe serveix per a les syslogd, xntp, coda, xinetd";
-         ./not_running_standard.sh;
+         ./scripts/not_running_standard.sh;
     _menu
     ;;
 
     21)
       option_picked "Opcio $opc seleccionada";
-      ./free.sh;
+      ./scripts/free.sh;
     _menu
     ;;
 
@@ -140,7 +140,7 @@ until [ "$opc" == "s" ]; do
 
     23)
       option_picked "Opcio $opc seleccionada";
-        ./top.sh;
+        ./scripts/top.sh;
     _menu
     ;;
 
@@ -153,7 +153,7 @@ until [ "$opc" == "s" ]; do
     999)
        option_picked "Opcio $opc seleccionada";
          echo "torna el resultat que es demana per a UNIX";
-         ./evwebX.sh;
+         ./scripts/evwebX.sh;
     _menu
     ;;
 
